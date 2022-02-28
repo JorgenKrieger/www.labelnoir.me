@@ -23,3 +23,13 @@ $mediaQueries: (
 	"wq-hd": 215rem, 	// 3440px
 	"4k": 240rem    	// 3840px
 );
+
+@function mediaQuery($key) {
+	@if not map.has-key($mediaQueries, $key) {
+		@error "Unknown mediaquery: $key"
+	}
+	@return map.get($mediaQueries, $key);
+}
+
+// Content
+$contentWidth: clamp(300px, 90%, #{mediaQuery('full-hd')});
