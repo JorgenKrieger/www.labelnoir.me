@@ -1,0 +1,7 @@
+@use "sass:color"
+
+@function hexToRGB($hex)
+	@return red($hex), green($hex), blue($hex)
+
+@function hexToHSL($hex)
+	@return hue($hex), saturation($hex), lightness($hex)

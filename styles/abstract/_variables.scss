@@ -1,0 +1,25 @@
+@use "sass:map";
+
+// Colors
+$colors: (
+	"black": #131313,
+	"white": #ffffff,
+);
+
+@function color($key) {
+	@if not map.has-key($colors, $key) {
+		@error "Unknown color: $key"
+	}
+	@return map.get($colors, $key);
+}
+
+// Media Queries
+$mediaQueries: (
+	"phone": 48rem, 	//  768px
+	"tablet": 64rem,	// 1024px
+	"laptop": 90rem,	// 1440px
+	"full-hd": 120rem,	// 1920px
+	"quad-hd": 160rem,	// 2560px
+	"wq-hd": 215rem, 	// 3440px
+	"4k": 240rem    	// 3840px
+);
