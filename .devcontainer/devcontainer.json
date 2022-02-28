@@ -1,0 +1,72 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.217.4/containers/javascript-node
+{
+	"name": "Node.js",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick a Node version: 16, 14, 12.
+		// Append -bullseye or -buster to pin to an OS version.
+		// Use -bullseye variants on local arm64/Apple Silicon.
+		"args": { "VARIANT": "16-bullseye" }
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		// Editor config
+		"editor.tabSize": 4,
+		"editor.formatOnSave": true,
+		"eslint.enable": true,
+		"eslint.alwaysShowStatus": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		
+		// Stylelint
+		"stylelint.enable": true,
+		"css.validate": false,
+		"less.validate": false,
+		"scss.validate": false,
+
+		// Prettier
+		"prettier.htmlWhitespaceSensitivity": "strict",
+		"prettier.semi": false,
+		"prettier.singleQuote": true,
+		"prettier.trailingComma": "es5",
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"stylelint.vscode-stylelint",
+		"esbenp.prettier-vscode",
+		"syler.sass-indented",
+		"kamikillerto.vscode-colorize",
+		"github.copilot",
+		"wix.vscode-import-cost",
+		"deque-systems.vscode-axe-linter"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [3000],
+	"portsAttributes": {
+		"3000": {
+			"label": "Next.js",
+			"onAutoForward": "openBrowser"
+		}
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "npm install",
+	"postStartCommand": "npm run dev",
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "node",
+	"features": {
+		"git": "os-provided",
+		"github-cli": "latest"
+	}
+}

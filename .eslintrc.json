@@ -1,0 +1,14 @@
+{
+	"extends": [
+		"next/core-web-vitals",
+		"eslint:recommended",
+		"prettier"
+	],
+	"rules": {
+		"max-len": [
+			"error", {
+				"code": 100
+	  		}
+		]
+	}
+}
