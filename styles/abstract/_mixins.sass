@@ -1,0 +1,16 @@
+@mixin textOutline($color: var(--shade-light))
+	-webkit-text-fill-color: transparent
+	-webkit-text-stroke-width: 1.5px
+	@media (min-resolution: 2dppx)
+		-webkit-text-stroke-width: 1px
+	-webkit-text-stroke-color: $color
+
+@mixin textBackground($image: var(--backgroundImage), $opacity: .75)
+	-webkit-background-clip: text
+	background:
+		clip: text
+		image: $image
+		position: center
+		size: cover
+	filter: grayscale(150%) contrast(100%)
+	opacity: $opacity

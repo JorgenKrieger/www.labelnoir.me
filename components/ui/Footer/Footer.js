@@ -33,7 +33,7 @@ const Footer = () => {
             </blockquote>
 
             <div className={cx('links')}>
-                <ul>
+                <ul className="links_list">
                     <li>
                         <a
                             href="https://www.linkedin.com/in/jorgenkrieger/"

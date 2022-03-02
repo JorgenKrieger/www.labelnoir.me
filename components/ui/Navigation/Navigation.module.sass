@@ -7,6 +7,7 @@
 
 .skip:focus, .skip:active
 	left: 0
+	top: 0
 	background: var(--foreground)
 	color: var(--background)
 	padding: 1rem 2rem
@@ -52,7 +53,7 @@
 			position: left
 			repeat: no-repeat
 
-		-webkit-text-stroke: 1.5px rgba(var(--foreground-rgb), 0.25)
+		@include helpers.textOutline(rgba(var(--foreground-rgb), 0.25))
 		-webkit-background-clip: text
 
 		transition: background-size .2s ease-out

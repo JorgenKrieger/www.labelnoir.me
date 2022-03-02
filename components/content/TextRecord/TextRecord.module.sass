@@ -1,0 +1,26 @@
+@use '../../../styles/helpers'
+
+.content-text
+	display: grid
+	column-gap: 5vw
+	
+	@media (min-width: #{helpers.mediaQuery('phone')})
+		grid-template-columns: repeat(2, 1fr)
+
+	@media (min-width: #{helpers.mediaQuery('laptop')})
+		grid-template-columns: repeat(3, 1fr)
+
+	&.align-right div
+		grid-column: -2
+
+	ul:not([class]),
+	ol:not([class])
+		li
+			margin-left: 1.2em 
+			padding-left: .8em
+
+			&::marker
+				color: rgba(var(--foreground-rgb), .5)
+
+			& + li
+				margin-top: 1.5em

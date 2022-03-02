@@ -1,0 +1,37 @@
+@use '../helpers'
+
+.hero
+	margin-top: 13.5rem
+	padding-bottom: 10rem
+	border-bottom: 1px solid var(--shade-light)
+
+	.heading
+		font:
+			family: var(--font-decorative)
+			size: 12.5vw
+		line-height: .8
+		margin-bottom: 5rem
+
+		@include helpers.textBackground(var(--backgroundImage), 1)
+		@include helpers.textOutline
+
+	.align-left + .align-right
+		display: block
+		text-align: right
+
+.summary
+	margin:
+		top: 5rem
+		bottom: 20rem
+	display: grid
+	row-gap: 5rem
+
+	@media (min-width: #{helpers.mediaQuery('tablet')})
+		grid-template-columns: repeat(2, 1fr)
+		row-gap: 20rem
+
+		div
+			margin-right: 33%
+
+	blockquote
+		grid-column: 1 / -1

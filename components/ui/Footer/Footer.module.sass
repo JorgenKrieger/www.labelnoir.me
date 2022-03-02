@@ -20,18 +20,8 @@
 			@media (min-width: #{helpers.mediaQuery('tablet')})
 				font-size: 5.5vw
 
-			-webkit-text-fill-color: transparent
-			-webkit-text-stroke-width: 1.5px
-			-webkit-text-stroke-color: rgba(var(--foreground-rgb), 0.25)
-			-webkit-background-clip: text
-			background:
-				clip: text
-				color: red
-				image: url(https://images.unsplash.com/photo-1558403194-611308249627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)
-				position: center
-				size: cover
-			filter: grayscale(150%) contrast(100%)
-			opacity: .75
+			@include helpers.textBackground(url(https://images.unsplash.com/photo-1558403194-611308249627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80))
+			@include helpers.textOutline(rgba(var(--foreground-rgb), 0.25))
 
 	.noCookie
 		position: absolute
