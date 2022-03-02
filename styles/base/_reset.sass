@@ -18,6 +18,8 @@ html,
 body
 	background: var(--background)
 	color: var(--foreground)
+	width: 100%
+	overflow-x: hidden
 
 body
 	text-rendering: optimizeSpeed
@@ -46,6 +48,9 @@ sub
 
 sup
 	top: -0.5em
+
+main:focus
+	outline: none
 
 @media (prefers-reduced-motion: reduce)
 	*

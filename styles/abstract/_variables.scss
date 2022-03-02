@@ -32,4 +32,4 @@ $mediaQueries: (
 }
 
 // Content
-$contentWidth: clamp(300px, 90%, #{mediaQuery('full-hd')});
+$contentWidth: clamp(300px, 90%, #{mediaQuery('quad-hd')});

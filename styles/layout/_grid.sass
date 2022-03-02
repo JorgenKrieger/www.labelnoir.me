@@ -1,7 +1,11 @@
 @use '../helpers'
 
 .container
-	width: clamp(300px, 90%, #{helpers.mediaQuery("full-hd")})
 	margin:
-		left: auto
-		right: auto
+		left: 3.25rem
+		right: 1rem
+
+	@media (min-width: #{helpers.mediaQuery('phone')})
+		margin:
+			left: 5vw
+			right: 5vw

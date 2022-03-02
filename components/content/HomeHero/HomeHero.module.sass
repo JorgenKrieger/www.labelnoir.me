@@ -1,0 +1,82 @@
+@use "../../../styles/helpers"
+
+.hero
+	display: grid
+	height: 100vh
+
+	grid-template-rows: auto 1fr
+	
+	@media (max-width: #{helpers.mediaQuery('phone') - .01})
+		padding-top: 8rem
+
+	@media (min-width: #{helpers.mediaQuery('phone')})
+		grid-template:
+			columns: repeat(2, 1fr)
+			rows: repeat(3, 1fr)
+		column-gap: 10vw
+
+	@media (min-width: #{helpers.mediaQuery('laptop')})
+		grid-template:
+			columns: repeat(3, 1fr)
+		column-gap: 5vw
+
+	@media (min-width: #{helpers.mediaQuery('phone')})
+		.content
+			grid:
+				row: 2 / -1
+				column: 1
+
+	.year
+		position: absolute
+		top: 0
+		right: 0
+		transform-origin: calc(100% - 1em) 0
+		transform: rotate(-90deg) translate(1rem, .3em)
+
+		font:
+			size: 18.75rem
+			family: var(--font-decorative)
+			weight: 700
+		line-height: .8
+
+		span
+			display: block
+
+		@media (min-width: #{helpers.mediaQuery('phone')})
+			right: unset
+			top: 33%
+			transform: translateY(-50%)
+			
+			font:
+				size: 22vw
+
+		-webkit-text-fill-color: transparent
+		-webkit-text-stroke-width: 1px
+		-webkit-text-stroke-color: rgba(var(--foreground-rgb), 0.1)
+		pointer-events: none
+
+	figure
+		grid-row: 1
+		transform: translateX(1rem)
+		padding-left: 5rem
+		margin-bottom: 3.125rem
+
+		img
+			width: calc(100% + 1rem)
+
+		figcaption
+			margin-right: 1rem
+
+		@media (min-width: #{helpers.mediaQuery('phone')})
+			padding-left: unset
+			grid:
+				row: 2 / -1
+				column: -2
+			transform: unset
+			margin-bottom: unset
+
+			img
+				width: 100%
+
+			figcaption
+				margin-right: unset	

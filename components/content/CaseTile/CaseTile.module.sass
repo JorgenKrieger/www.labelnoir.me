@@ -1,0 +1,52 @@
+.case
+	h2,
+	h3
+		font:
+			family: var(--font-decorative)
+			size: 1.6rem
+		margin-bottom: 0.5rem
+
+		span
+			font:
+				size: 0.625em
+				weight: 400
+			
+			&::before
+				content: "/ "
+
+	a
+		color: var(--foreground)
+		display: block
+		width: fit-content
+		margin-top: 1.25rem
+
+.image
+	display: block
+	position: relative
+	margin-bottom: 2.5rem
+	
+	img
+		opacity: .5
+		transition: filter .2s ease-in-out, opacity .2s ease-in-out
+
+		&:hover
+			opacity: 1
+	
+.logo
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	pointer-events: none
+
+	span
+		aspect-ratio: 1/1
+
+	img
+		filter: brightness(0) invert(1)
+		opacity: 1
+		transition: opacity .2s ease-in-out, transform .2s ease-in-out
+
+		.image:hover &
+			opacity: 0
+			transform: scale(1.1)

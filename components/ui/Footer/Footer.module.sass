@@ -1,0 +1,82 @@
+@use "../../../styles/helpers"
+
+.footer
+	position: relative
+	margin:
+		top: 20vw
+		bottom: 5vw
+
+	blockquote
+		position: relative
+
+		> p
+			font:
+				family: var(--font-decorative)
+				size: 9.5vw
+				weight: bold
+			line-height: 1
+			margin-bottom: 0.5em
+
+			@media (min-width: #{helpers.mediaQuery('tablet')})
+				font-size: 5.5vw
+
+			-webkit-text-fill-color: transparent
+			-webkit-text-stroke-width: 1.5px
+			-webkit-text-stroke-color: rgba(var(--foreground-rgb), 0.25)
+			-webkit-background-clip: text
+			background:
+				clip: text
+				color: red
+				image: url(https://images.unsplash.com/photo-1558403194-611308249627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)
+				position: center
+				size: cover
+			filter: grayscale(150%) contrast(100%)
+			opacity: .75
+
+	.noCookie
+		position: absolute
+		display: flex
+		right: 0
+		top: 0
+		height: 100%
+		width: 100%
+		padding-inline-start: 50%
+		background: radial-gradient(90.12% 411.4% at 90.12% 100%, var(--background), rgba(var(--background-rgb), .9), transparent)
+
+		@media (min-width: #{helpers.mediaQuery('tablet')})
+			width: 66%
+			padding-inline-start: 33%
+
+		@media (min-width: #{helpers.mediaQuery('laptop')})
+			width: 50%
+			padding-inline-start: 25%
+
+		p
+			align-self: end
+
+
+.links
+	display: flex
+	justify-content: space-between
+
+	ul
+		display: flex
+		list-style: none
+
+		li
+			& + li
+				margin-inline-start: 2.5rem
+
+			a
+				color: var(--foreground)
+
+	button
+		background: none
+		border: none
+		color: var(--foreground)
+		text-decoration: underline
+		cursor: pointer
+		font-size: 1rem
+
+		@media (min-width: #{helpers.mediaQuery('phone')})
+			font-size: 1.25rem
