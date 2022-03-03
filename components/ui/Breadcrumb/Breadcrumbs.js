@@ -2,15 +2,28 @@
 import { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-
 import styles from './Breadcrumbs.module.sass';
 
-// Component
+// Helper functions
 const generatePathParts = (pathStr) => {
     const pathWithoutQuery = pathStr.split('?')[0];
     return pathWithoutQuery.split('/').filter((v) => v.length > 0);
 };
 
+// Helper components
+const Crumb = ({ path, label, last = false }) => {
+    if (last) {
+        return <span className={styles.breadcrumb}>{label}</span>;
+    }
+
+    return (
+        <Link href={path}>
+            <a className={styles.breadcrumb}>{label}</a>
+        </Link>
+    );
+};
+
+// Component
 const Breadcrumbs = () => {
     const router = useRouter();
 
@@ -45,18 +58,6 @@ const Breadcrumbs = () => {
                 <Crumb {...crumb} key={idx} last={idx === breadcrumbs.length - 1} />
             ))}
         </>
-    );
-};
-
-const Crumb = ({ path, label, last = false }) => {
-    if (last) {
-        return <span className={styles.breadcrumb}>{label}</span>;
-    }
-
-    return (
-        <Link href={path}>
-            <a className={styles.breadcrumb}>{label}</a>
-        </Link>
     );
 };
 

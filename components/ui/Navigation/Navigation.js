@@ -5,13 +5,10 @@ import FocusLock from 'react-focus-lock';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-
 import styles from './Navigation.module.sass';
-
-// Imports
 import Logo from '../Logo';
 
-// Connect styles
+// Prepare classes
 let cx = classNames.bind(styles);
 
 // Component

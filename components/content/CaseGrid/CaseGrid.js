@@ -1,8 +1,6 @@
 // Libraries
 import classNames from 'classnames/bind';
 import styles from './CaseGrid.module.sass';
-
-// Imports
 import { CaseTile } from '..';
 
 // Prepare classes

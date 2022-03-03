@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { H, Section } from 'react-headings';
 import classnames from 'classnames/bind';
 import styles from '../styles/pages/about.module.sass';
-
 import { Persona, WorkExperience, Education } from '../components/content';
 import client from '../apollo-client';
 import { gql } from '@apollo/client';

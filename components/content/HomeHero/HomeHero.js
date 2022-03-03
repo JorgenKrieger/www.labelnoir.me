@@ -33,17 +33,6 @@ const HomeHero = ({ content, image }) => {
         <div className={cx('container', 'hero')}>
             <div className={cx('content')}>
                 <StructuredText data={content} />
-                {/* <h1>Business Experience Designer</h1>
-                <p>
-                    So, by now you've probably heard about UX Designers. Unfortunately, this term
-                    has recently been connected with web and interaction design a little too much
-                    for my likings.
-                </p>
-                <p>
-                    As a business experience designer, I focus on customer experiences for
-                    businesses, rather than just an optimal/efficient workflow in an app.
-                </p>
-                <p>Why? Because a business is more than just an app or website.</p> */}
             </div>
 
             <div className={cx('year')}>

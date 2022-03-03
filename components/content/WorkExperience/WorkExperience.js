@@ -49,7 +49,6 @@ const WorkExperience = ({ data }) => {
                 <Swiper className={cx('jobs')} spaceBetween={50} slidesPerView={'auto'}>
                     {data.map((job) => (
                         <SwiperSlide key={job.agency} className={cx('slide')}>
-                            {console.log(job)}
                             <Logo logo={job.logo} />
                             <H className={cx('agency')}>{job.agency}</H>
                             <p className={cx('year')}>

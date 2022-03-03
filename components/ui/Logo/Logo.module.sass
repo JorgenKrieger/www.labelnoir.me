@@ -10,15 +10,17 @@
 	transform: rotate(-90deg)
 	width: max-content
 
+	text-transform: uppercase
+	font:
+		family: var(--font-sans)
+		size: .8rem
+		weight: 350
+
+	color: rgba(var(--foreground-rgb), .5)
+
 	@media (min-width: #{helpers.mediaQuery('phone')})
 		right: unset
 		transform: unset
 		top: 2.5rem
 		left: 5vw
-
-	text-transform: uppercase
-	font:
-		family: var(--font-sans)
-		weight: 350
-
-	color: rgba(var(--foreground-rgb), .5)
+		font-size: 1rem

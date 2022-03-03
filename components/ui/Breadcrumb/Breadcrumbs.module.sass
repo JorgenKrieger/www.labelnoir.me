@@ -1,8 +1,11 @@
 @use "sass:selector"
+@use "../../../styles/helpers"
 
 .breadcrumb
 	position: relative
-	margin-inline-start: 4rem
+	margin-inline-start: 2rem
+	@media (min-width: #{helpers.mediaQuery('phone')})
+		margin-inline-start: 4rem
 	font-weight: 800
 	color: var(--foreground)
 
@@ -35,10 +38,14 @@
 	&::before
 		content: '/'
 		position: absolute
-		left: -2rem
+		left: -1rem
+		@media (min-width: #{helpers.mediaQuery('phone')})
+			left: -2rem
 		transform: translateX(-50%)
 		font-weight: 350
 
 		[dir="rtl"] &
 			left: unset
-			right: -2rem
+			right: -1rem
+			@media (min-width: #{helpers.mediaQuery('phone')})
+				right: -2rem

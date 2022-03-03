@@ -13,100 +13,23 @@ import styles from '../../styles/pages/case.module.sass';
 // Prepare classes
 let cx = classNames.bind(styles);
 
+// Helper functions
+const Content = ({ data }) => {
+    switch (data.__typename) {
+        case 'TextRecord':
+            return <TextRecord data={data} />;
+        case 'ImageRecord':
+            return <ImageRecord data={data} />;
+        case 'QuoteRecord':
+            return <QuoteRecord data={data} />;
+        case 'GalleryRecord':
+            return <GalleryRecord data={data} />;
+        default:
+            return <div>{JSON.stringify(data, null, 2)}</div>;
+    }
+};
+
 // Component
-export async function getStaticPaths() {
-    const { data } = await client.query({
-        query: gql`
-            query allCases {
-                allCases {
-                    slug
-                }
-            }
-        `,
-    });
-
-    const paths = data.allCases.map((singleCase) => ({
-        params: { slug: singleCase.slug },
-    }));
-
-    return {
-        paths,
-        fallback: false,
-    };
-}
-
-export async function getStaticProps({ params, preview = false }) {
-    const { data } = await client.query({
-        query: gql`
-            query CaseBySlug($slug: String!) {
-                case(filter: { slug: { eq: $slug } }) {
-                    client
-                    titleLeftAligned
-                    titleRightAligned
-                    thumbnail {
-                        url
-                    }
-                    content {
-                        ... on ImageRecord {
-                            id
-                            image {
-                                width
-                                url
-                                height
-                                blurUpThumb
-                                alt
-                                title
-                            }
-                            imageSize
-                        }
-                        ... on QuoteRecord {
-                            id
-                            blockquote
-                        }
-                        ... on TextRecord {
-                            id
-                            title
-                            textAlignRight
-                            content {
-                                value
-                            }
-                        }
-                        ... on GalleryRecord {
-                            id
-                            images {
-                                alt
-                                title
-                                url
-                                width
-                                blurUpThumb
-                                height
-                            }
-                        }
-                    }
-                    agency
-                    challenge {
-                        value
-                    }
-                    outcome {
-                        value
-                    }
-                    quote
-                    role
-                    year
-                }
-            }
-        `,
-        preview,
-        variables: {
-            slug: params.slug,
-        },
-    });
-
-    const caseData = data.case;
-
-    return { props: { caseData } };
-}
-
 const Case = ({ caseData }) => {
     const data = caseData;
 
@@ -203,20 +126,100 @@ export const Agency = ({ agency }) => {
     }
 };
 
-export const Content = ({ data }) => {
-    switch (data.__typename) {
-        case 'TextRecord':
-            return <TextRecord data={data} />;
-        case 'ImageRecord':
-            return <ImageRecord data={data} />;
-        case 'QuoteRecord':
-            return <QuoteRecord data={data} />;
-        case 'GalleryRecord':
-            return <GalleryRecord data={data} />;
-        default:
-            return <div>{JSON.stringify(data, null, 2)}</div>;
-    }
-};
+// Create static pages
+export async function getStaticPaths() {
+    const { data } = await client.query({
+        query: gql`
+            query allCases {
+                allCases {
+                    slug
+                }
+            }
+        `,
+    });
+
+    const paths = data.allCases.map((singleCase) => ({
+        params: { slug: singleCase.slug },
+    }));
+
+    return {
+        paths,
+        fallback: false,
+    };
+}
+
+// GraphQL
+export async function getStaticProps({ params, preview = false }) {
+    const { data } = await client.query({
+        query: gql`
+            query CaseBySlug($slug: String!) {
+                case(filter: { slug: { eq: $slug } }) {
+                    client
+                    titleLeftAligned
+                    titleRightAligned
+                    thumbnail {
+                        url
+                    }
+                    content {
+                        ... on ImageRecord {
+                            id
+                            image {
+                                width
+                                url
+                                height
+                                blurUpThumb
+                                alt
+                                title
+                            }
+                            imageSize
+                        }
+                        ... on QuoteRecord {
+                            id
+                            blockquote
+                        }
+                        ... on TextRecord {
+                            id
+                            title
+                            textAlignRight
+                            content {
+                                value
+                            }
+                        }
+                        ... on GalleryRecord {
+                            id
+                            images {
+                                alt
+                                title
+                                url
+                                width
+                                blurUpThumb
+                                height
+                            }
+                        }
+                    }
+                    agency
+                    challenge {
+                        value
+                    }
+                    outcome {
+                        value
+                    }
+                    quote
+                    role
+                    year
+                }
+            }
+        `,
+        preview,
+        variables: {
+            slug: params.slug,
+        },
+    });
+
+    const caseData = data.case;
+
+    return { props: { caseData } };
+}
 
 // Export
 export default Case;

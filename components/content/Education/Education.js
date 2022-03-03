@@ -6,8 +6,6 @@ import classnames from 'classnames/bind';
 // Prepare classes
 let cx = classnames.bind(styles);
 
-// Helper components
-
 // Component
 const Education = ({ data }) => {
     return (
