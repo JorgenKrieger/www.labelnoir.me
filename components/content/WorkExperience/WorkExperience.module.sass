@@ -1,0 +1,43 @@
+@use "../../../styles/helpers"
+
+.workExperience
+	margin:
+		top: 20rem
+
+	.slide
+		width: calc(80% - 4.25rem)
+		transform: translate3d(3.25rem, 0, 0) !important
+
+		&:last-child
+			margin-right: 4.25rem
+
+		@media (min-width: #{helpers.mediaQuery('phone')})
+			width: 20rem
+			transform: translate3d(5vw, 0, 0) !important
+
+			&:last-child
+				margin-right: 10vw
+
+	figure
+		aspect-ratio: 1
+		border:
+			bottom: 1px solid var(--shade-light)
+			right: 1px solid var(--shade-light)
+		margin-bottom: 2.5rem
+		display: grid
+		place-items: center
+
+		> p
+			font-size: 1rem
+			text-align: center
+			color: var(--shade-light)
+
+	.jobs
+		margin-top: 5rem
+
+	.agency
+		margin-bottom: 0.2rem
+
+	.year
+		color: var(--foreground)
+		font-family: var(--font-decorative)

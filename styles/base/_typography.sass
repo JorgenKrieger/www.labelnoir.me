@@ -7,7 +7,7 @@ html
 	body
 		font-size: 125%
 
-h1:not([class])
+h1
 	font:
 		size: 3vw
 		family: var(--font-decorative)
@@ -16,18 +16,20 @@ h1:not([class])
 	&:not(:only-child)
 		margin-bottom: 2rem
 
-h2:not([class]),
+h2,
 .h2
 	font:
 		family: var(--font-decorative)
-		size: 3.5vw
+		size: 6vw
 	text-align: center
 	line-height: 1
-
 	width: 70%
 	margin: 0 auto
 
-h3:not([class]),
+	@media (min-width: #{helpers.mediaQuery('phone')})
+		font-size: 3.5vw
+
+h3,
 .h3
 	font:
 		family: var(--font-decorative)
@@ -51,6 +53,10 @@ p
 	&.small
 		font-size: .75rem
 
+ul:not([class])
+	li
+		margin-left: 1rem
+
 figcaption
 	margin-top: 1rem
 	font-size: .7em
@@ -64,7 +70,7 @@ blockquote
 		size: max(2.4rem, 5vw)
 	line-height: 1.5
 
-dl
+dl:not([class])
 	dt
 		@extend p
 	dd

@@ -109,7 +109,6 @@ export async function getStaticProps({ params, preview = false }) {
 
 const Case = ({ caseData }) => {
     const data = caseData;
-    console.log(data);
 
     return (
         <>

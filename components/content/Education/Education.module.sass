@@ -1,0 +1,57 @@
+@use "../../../styles/helpers"
+
+.content-education
+	margin-top: 20rem
+
+	.school
+		display: grid
+		padding-bottom: 2rem
+		border-bottom: 1px solid var(--shade-light)
+		margin-top: 5rem
+
+		@media (min-width: #{helpers.mediaQuery('tablet')})
+			grid-template-columns: 1fr 2fr
+
+		&:first-of-type
+			margin-top: 10rem
+
+
+		div
+			align-self: center
+
+		.degree
+			font:
+				family: var(--font-decorative)
+				size: 1.6rem
+				weight: 700
+			color: var(--foreground)
+			line-height: 1
+		
+		.institution
+			margin-top: 0.5rem
+
+		.year
+			margin-top: 1rem
+			align-self: center
+
+			font:
+				family: var(--font-decorative)
+				size: 4.5rem
+				weight: 700
+			line-height: 1
+			@include helpers.textOutline
+
+			span
+				display: block
+
+			@media (min-width: #{helpers.mediaQuery('phone')})
+
+				span
+					display: inline
+
+				.start::after
+					content: " - "
+
+			@media (min-width: #{helpers.mediaQuery('tablet')})
+				justify-self: end
+				margin-top: unset
