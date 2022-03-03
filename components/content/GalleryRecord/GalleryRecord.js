@@ -11,7 +11,7 @@ const GalleryRecord = ({ data }) => {
     return (
         <div
             className={cx('container', 'content', 'content-gallery')}
-            style={{ '--images': data.images.length }}
+            style={{ '--images': data.images.length > 4 ? 4 : data.images.length }}
         >
             {data.images.map((image, index) => (
                 <figure key={index} className={cx('image')}>

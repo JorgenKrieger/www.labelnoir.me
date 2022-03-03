@@ -11,7 +11,7 @@
 			grid-column: 1 / -1
 
 	@media (min-width: #{helpers.mediaQuery('laptop')})
-		grid-template-columns: repeat(var(--images), 1fr)
+		grid-template-columns: repeat(min(var(--images), 4), 1fr)
 		column-gap: 2rem
 		row-gap: 2rem
 
