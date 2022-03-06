@@ -1,13 +1,19 @@
 @use '../../../styles/helpers'
 
 .cases
-	margin-top: 10vh
+	margin-top: 10rem
+	@media (min-width: #{helpers.mediaQuery('phone')})
+		margin-top: 10vh
 
 .grid
-	margin-top: 10rem
+	margin-top: 1.5rem
 	display: grid
 	column-gap: 3.5vw
-	row-gap: 3.5vw
+	row-gap: 3.5rem
+
+	@media (min-width: #{helpers.mediaQuery('phone')})
+		margin-top: 10rem
+		row-gap: 3.5vw
 
 	@media (min-width: #{helpers.mediaQuery('phone')}) and (max-width: #{helpers.mediaQuery('full-hd')})
 		grid-template-columns: repeat(2, 1fr)

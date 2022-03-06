@@ -33,45 +33,52 @@ const Navigation = () => {
     });
 
     return (
-        <FocusLock disabled={!isOpen}>
+        <>
             <a className={styles.skip} href="#main" onClick={() => openMenu(false)}>
                 Skip to main content
             </a>
+            <FocusLock disabled={!isOpen}>
+                <header className={cx('container', 'header')}>
+                    <Logo />
 
-            <header className={cx('container', 'header')}>
-                <Logo />
+                    <button
+                        aria-label={isOpen ? 'Open menu' : 'Close menu'}
+                        aria-haspopup="menu"
+                        onClick={() => openMenu(!isOpen)}
+                        className={cx('menu-toggle', {
+                            open: isOpen,
+                            closed: !isOpen,
+                        })}
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </header>
 
-                <button
-                    aria-label={isOpen ? 'Open menu' : 'Close menu'}
-                    aria-haspopup="menu"
-                    onClick={() => openMenu(!isOpen)}
-                    className={cx('menu-toggle', {
-                        open: isOpen,
-                        closed: !isOpen,
-                    })}
-                >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </header>
+                <CSSTransition in={isOpen} timeout={300} classNames={cx('fade')} unmountOnExit>
+                    <nav className={cx('navigation')}>
+                        <Link href="/">
+                            <a>Home</a>
+                        </Link>
 
-            <CSSTransition in={isOpen} timeout={300} classNames={cx('fade')} unmountOnExit>
-                <nav className={cx('navigation')}>
-                    <Link href="/">
-                        <a>Home</a>
-                    </Link>
+                        <Link href="/about">
+                            <a>About</a>
+                        </Link>
 
-                    <Link href="/about">
-                        <a>About</a>
-                    </Link>
-
-                    <Link href="/contact">
-                        <a>Contact</a>
-                    </Link>
-                </nav>
-            </CSSTransition>
-        </FocusLock>
+                        <Link href="#contact">
+                            <a
+                                onClick={() => {
+                                    openMenu(false);
+                                }}
+                            >
+                                Contact
+                            </a>
+                        </Link>
+                    </nav>
+                </CSSTransition>
+            </FocusLock>
+        </>
     );
 };
 

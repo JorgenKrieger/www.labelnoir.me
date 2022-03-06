@@ -9,9 +9,12 @@ html
 
 h1
 	font:
-		size: 3vw
+		size: 7.5vw
 		family: var(--font-decorative)
 	line-height: 1
+
+	@media (min-width: #{helpers.mediaQuery('phone')})
+		font-size: 3vw
 
 	&:not(:only-child)
 		margin-bottom: 2rem

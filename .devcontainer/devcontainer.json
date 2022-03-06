@@ -51,13 +51,14 @@
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [3000],
-	"portsAttributes": {
-		"3000": {
-			"label": "Next.js",
-			"onAutoForward": "openBrowser"
-		}
-	},
+	"appPort": ["80:3000", "443:3001"],
+	// "forwardPorts": [3000, 80],
+	// "portsAttributes": {
+	// 	"80": {
+	// 		"label": "Next.js",
+	// 		"onAutoForward": "openBrowser"
+	// 	}
+	// },
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "npm install",

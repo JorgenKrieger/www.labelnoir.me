@@ -2,7 +2,7 @@
 
 .hero
 	display: grid
-	height: 100vh
+	min-height: 100vh
 
 	grid-template-rows: auto 1fr
 	
@@ -41,6 +41,9 @@
 
 		span
 			display: block
+		
+		@media (max-width: #{helpers.mediaQuery('phone') - .01})
+			display: none
 
 		@media (min-width: #{helpers.mediaQuery('phone')})
 			right: unset

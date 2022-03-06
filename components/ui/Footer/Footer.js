@@ -12,7 +12,7 @@ const Footer = () => {
     const [showNoCookie, setIsOpen] = useState(false);
 
     return (
-        <footer className={cx('container', 'footer')}>
+        <footer id="contact" className={cx('container', 'footer')}>
             <blockquote>
                 <p>Let’s create something awesome together</p>
                 <CSSTransition
