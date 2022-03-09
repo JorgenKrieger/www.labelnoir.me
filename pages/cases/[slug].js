@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { gql } from '@apollo/client';
 import client from '../../apollo-client';
 import { H, Section } from 'react-headings';
-import { StructuredText } from 'react-datocms';
+import { renderMetaTags, StructuredText } from 'react-datocms';
 import React from 'react';
 import { TextRecord, ImageRecord, QuoteRecord, GalleryRecord } from '../../components/content';
 
@@ -30,14 +30,12 @@ const Content = ({ data }) => {
 };
 
 // Component
-const Case = ({ caseData }) => {
+const Case = ({ caseData, favicon }) => {
     const data = caseData;
 
     return (
         <>
-            <Head>
-                <title>{data.client} / LabelNoir</title>
-            </Head>
+            <Head>{renderMetaTags([...data.seo, ...favicon])}</Head>
 
             <header
                 className={cx('container', 'hero')}
@@ -153,7 +151,19 @@ export async function getStaticProps({ params, preview = false }) {
     const { data } = await client.query({
         query: gql`
             query CaseBySlug($slug: String!) {
+                site: _site {
+                    favicon: faviconMetaTags {
+                        attributes
+                        content
+                        tag
+                    }
+                }
                 case(filter: { slug: { eq: $slug } }) {
+                    seo: _seoMetaTags {
+                        attributes
+                        content
+                        tag
+                    }
                     client
                     titleLeftAligned
                     titleRightAligned
@@ -216,9 +226,10 @@ export async function getStaticProps({ params, preview = false }) {
         },
     });
 
+    const favicon = data.site.favicon;
     const caseData = data.case;
 
-    return { props: { caseData } };
+    return { props: { caseData, favicon } };
 }
 
 // Export

@@ -7,20 +7,18 @@ import styles from '../styles/pages/about.module.sass';
 import { Persona, WorkExperience, Education } from '../components/content';
 import client from '../apollo-client';
 import { gql } from '@apollo/client';
-import { StructuredText } from 'react-datocms';
+import { renderMetaTags, StructuredText } from 'react-datocms';
 
 // Prepare classes
 let cx = classnames.bind(styles);
 
 // Component
-const About = ({ aboutData }) => {
+const About = ({ aboutData, favicon }) => {
     const data = aboutData;
 
     return (
         <>
-            <Head>
-                <title>About / LabelNoir</title>
-            </Head>
+            <Head>{renderMetaTags([...data.seo, ...favicon])}</Head>
 
             <header className={cx('container', 'hero')}>
                 <H className={cx('heading')}>
@@ -79,7 +77,19 @@ export async function getStaticProps() {
     const { data } = await client.query({
         query: gql`
             query AboutPage {
+                site: _site {
+                    favicon: faviconMetaTags {
+                        attributes
+                        content
+                        tag
+                    }
+                }
                 about {
+                    seo: _seoMetaTags {
+                        attributes
+                        content
+                        tag
+                    }
                     personaPhoto {
                         url
                         width
@@ -137,10 +147,11 @@ export async function getStaticProps() {
         `,
     });
 
+    const favicon = data.site.favicon;
     const aboutData = data.about;
 
     return {
-        props: { aboutData },
+        props: { aboutData, favicon },
     };
 }
 

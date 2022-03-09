@@ -24,13 +24,17 @@
 	display: block
 	position: relative
 	margin-bottom: 2.5rem
-	
+
 	img
 		opacity: .5
 		transition: filter .2s ease-in-out, opacity .2s ease-in-out
 
 		&:hover
 			opacity: 1
+
+	&:focus-within img
+		opacity: 1
+		filter: grayscale(0%) contrast(100%)
 	
 .logo
 	position: absolute
@@ -47,6 +51,7 @@
 		opacity: 1
 		transition: opacity .2s ease-in-out, transform .2s ease-in-out
 
-		.image:hover &
+		.image:hover &,
+		.image:focus-within &
 			opacity: 0
 			transform: scale(1.1)

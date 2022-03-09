@@ -1,5 +1,5 @@
 // Libraries
-import { H, Section } from 'react-headings';
+import { H } from 'react-headings';
 import styles from './Education.module.sass';
 import classnames from 'classnames/bind';
 
@@ -13,7 +13,7 @@ const Education = ({ data }) => {
             <H>Educational background</H>
 
             {data.map((education) => (
-                <div className={cx('school')}>
+                <div key={education.institution} className={cx('school')}>
                     <div>
                         <p className={cx('degree')}>{education.degree}</p>
                         <p className={cx('institution')}>{education.institution}</p>
