@@ -1,10 +1,12 @@
-import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { ApolloClient, InMemoryCache, createHttpLink, ApolloLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-    uri: process.env.NEXT_PUBLIC_DATOCMS_PREVIEW
-        ? 'https://graphql.datocms.com/preview'
-        : 'https://graphql.datocms.com/',
+    uri: 'https://graphql.datocms.com/',
+});
+
+const previewHttpLink = createHttpLink({
+    uri: 'https://graphql.datocms.com/preview',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -18,7 +20,13 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-    link: authLink.concat(httpLink),
+    link: authLink.concat(
+        ApolloLink.split(
+            (operation) => operation.getContext().preview || false,
+            previewHttpLink,
+            httpLink
+        )
+    ),
     cache: new InMemoryCache(),
 });
 

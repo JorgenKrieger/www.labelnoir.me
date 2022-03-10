@@ -73,7 +73,7 @@ const About = ({ aboutData, favicon }) => {
 };
 
 // GraphQL
-export async function getStaticProps() {
+export async function getStaticProps(context) {
     const { data } = await client.query({
         query: gql`
             query AboutPage {
@@ -145,6 +145,7 @@ export async function getStaticProps() {
                 }
             }
         `,
+        preview: context.preview,
     });
 
     const favicon = data.site.favicon;

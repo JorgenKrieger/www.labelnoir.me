@@ -5,6 +5,7 @@ import { CaseGrid, HomeHero } from '../components/content';
 import { renderMetaTags } from 'react-datocms';
 import { gql } from '@apollo/client';
 import client from '../apollo-client';
+import { setContext } from '@apollo/client/link/context';
 
 // Components
 const Home = ({ data }) => {
@@ -22,7 +23,7 @@ const Home = ({ data }) => {
 };
 
 // GraphQL
-export async function getStaticProps() {
+export async function getStaticProps(context) {
     const { data } = await client.query({
         query: gql`
             query HomePage {
@@ -75,6 +76,7 @@ export async function getStaticProps() {
                 }
             }
         `,
+        preview: context.preview,
     });
 
     return {
