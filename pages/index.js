@@ -76,7 +76,7 @@ export async function getStaticProps(context) {
                 }
             }
         `,
-        preview: context.preview,
+        context: { preview: context.preview },
     });
 
     return {

@@ -147,7 +147,7 @@ export async function getStaticPaths() {
 }
 
 // GraphQL
-export async function getStaticProps({ params, preview = false }) {
+export async function getStaticProps(context) {
     const { data } = await client.query({
         query: gql`
             query CaseBySlug($slug: String!) {
@@ -220,10 +220,10 @@ export async function getStaticProps({ params, preview = false }) {
                 }
             }
         `,
-        preview,
         variables: {
-            slug: params.slug,
+            slug: context.params.slug,
         },
+        context: { preview: context.preview || false },
     });
 
     const favicon = data.site.favicon;

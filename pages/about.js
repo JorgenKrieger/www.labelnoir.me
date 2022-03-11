@@ -145,7 +145,7 @@ export async function getStaticProps(context) {
                 }
             }
         `,
-        preview: context.preview,
+        context: { preview: context.preview },
     });
 
     const favicon = data.site.favicon;
