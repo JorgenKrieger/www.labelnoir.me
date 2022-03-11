@@ -12,30 +12,6 @@ const ContentSecurityPolicy = `
 
 const securityHeaders = [
     {
-        key: 'X-DNS-Prefetch-Control',
-        value: 'on',
-    },
-    {
-        key: 'X-XSS-Protection',
-        value: '1; mode=block',
-    },
-    {
-        key: 'X-Frame-Options',
-        value: 'SAMEORIGIN',
-    },
-    {
-        key: 'Referrer-Policy',
-        value: 'same-origin',
-    },
-    {
-        key: 'X-Content-Type-Options',
-        value: 'nosniff',
-    },
-    {
-        key: 'Permissions-Policy',
-        value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
-    },
-    {
         key: 'Content-Security-Policy',
         value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
     },
@@ -50,14 +26,6 @@ const nextConfig = {
     i18n: {
         locales: ['en'],
         defaultLocale: 'en',
-    },
-    async headers() {
-        return [
-            {
-                source: '/:path*',
-                headers: securityHeaders,
-            },
-        ];
     },
     async redirects() {
         return [
