@@ -20,6 +20,7 @@
     "react-focus-lock": "^2.8.1",
     "react-headings": "^3.0.24",
     "react-transition-group": "^4.4.2",
+    "react-use": "^17.3.2",
     "swiper": "^8.0.6"
   },
   "devDependencies": {

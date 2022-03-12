@@ -1,6 +1,7 @@
 // Libraries
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { useIntersection } from 'react-use';
 import classnames from 'classnames/bind';
 import styles from './Footer.module.sass';
 
@@ -10,9 +11,21 @@ let cx = classnames.bind(styles);
 // Component
 const Footer = () => {
     const [showNoCookie, setIsOpen] = useState(false);
+    const footer = useRef(null);
+    const intersection = useIntersection(footer, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1,
+    });
 
     return (
-        <footer id="contact" className={cx('container', 'footer')}>
+        <footer
+            ref={footer}
+            id="contact"
+            className={cx('container', 'footer', {
+                lazy: intersection && !intersection.isIntersecting,
+            })}
+        >
             <blockquote>
                 <p>Let’s create something awesome together</p>
                 <CSSTransition
@@ -23,10 +36,9 @@ const Footer = () => {
                 >
                     <div className={cx('noCookie')}>
                         <p className="small">
-                            That’s right, this site doesn’t contain any tracking cookies. Your data
-                            is your own, I don’t want it. The only cookies stored are to make the
-                            website work. Want to get rid of these after your visit? Check out this
-                            guide.
+                            That’s right, this site doesn’t contain any cookies. Your data is your
+                            own, I don’t want it. The only cookies stored are to make the website
+                            work. Want to get rid of these after your visit? Check out this guide.
                         </p>
                     </div>
                 </CSSTransition>

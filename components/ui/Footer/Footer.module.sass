@@ -1,3 +1,4 @@
+@use "sass:selector"
 @use "../../../styles/helpers"
 
 .footer
@@ -20,8 +21,10 @@
 			@media (min-width: #{helpers.mediaQuery('tablet')})
 				font-size: 5.5vw
 
-			@include helpers.textBackground(url(/background.jpg))
 			@include helpers.textOutline(rgba(var(--foreground-rgb), 0.25))
+
+	&:not(.lazy) blockquote > p
+			@include helpers.textBackground(url(/background.jpg))
 
 	.noCookie
 		position: absolute
