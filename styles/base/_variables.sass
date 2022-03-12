@@ -12,10 +12,13 @@
 
 \:root
 	--spacing-section: 15rem
-	--spacing-row: 7.5rem
+	--spacing-row: 10rem
 	--spacing-columns: 5vw
 
 	--column-gap: var(--spacing-columns)
+
+	@media (min-width: #{helpers.mediaQuery('tablet')})
+		--spacing-row: 20rem
 
 \:root
 	--dropdown: 1000

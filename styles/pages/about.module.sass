@@ -1,8 +1,11 @@
 @use '../helpers'
 
 .hero
-	margin-top: 13.5rem
-	padding-bottom: 10rem
+	margin-top: 8rem
+
+	@media (min-width: #{helpers.mediaQuery('tablet')})
+		margin-top: 13.5rem
+		padding-bottom: 10rem
 
 	.heading
 		font:

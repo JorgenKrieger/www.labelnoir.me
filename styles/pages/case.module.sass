@@ -1,8 +1,11 @@
 @use '../helpers'
 
 .hero
-	margin-top: 13.5rem
-	padding-bottom: 10rem
+	margin-top: 8rem
+	padding-bottom: 4rem
+	@media (min-width: #{helpers.mediaQuery('tablet')})
+		margin-top: 13.5rem
+		padding-bottom: 10rem
 	border-bottom: 1px solid var(--shade-light)
 
 	.heading
@@ -22,7 +25,7 @@
 .summary
 	margin:
 		top: 5rem
-		bottom: 20rem
+		bottom: var(--spacing-row)
 	display: grid
 	row-gap: 5rem
 
