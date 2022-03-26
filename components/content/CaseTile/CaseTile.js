@@ -10,7 +10,7 @@ const CaseTile = ({ client, excerpt, slug, year, thumbnail, logo }) => {
     return (
         <Section>
             <div className={styles.case}>
-                <Link href="/cases/keukenliefde">
+                <Link href={`/cases/${slug}`}>
                     <a className={styles.image}>
                         <Image
                             src={thumbnail.url}
