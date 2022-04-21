@@ -37,8 +37,9 @@ const Footer = () => {
                     <div className={cx('noCookie')}>
                         <p className="small">
                             That’s right, this site doesn’t contain any cookies. Your data is your
-                            own, I don’t want it. The only cookies stored are to make the website
-                            work. Want to get rid of these after your visit? Check out this guide.
+                            own, I don’t want it. This website has been specifically build to work
+                            without using cookies. Still want cookies? Let's meet up for some
+                            chocolate-chip cookies! 🍪
                         </p>
                     </div>
                 </CSSTransition>

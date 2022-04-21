@@ -1,5 +1,6 @@
 // Libraries
 import { useState, useEffect } from 'react';
+import { useKey } from 'react-use';
 import { CSSTransition } from 'react-transition-group';
 import FocusLock from 'react-focus-lock';
 import classNames from 'classnames/bind';
@@ -30,6 +31,10 @@ const Navigation = () => {
         };
 
         router.events.on('routeChangeStart', handleRouteChange);
+    });
+
+    useKey('Escape', () => {
+        openMenu(false);
     });
 
     return (

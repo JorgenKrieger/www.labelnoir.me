@@ -23,7 +23,7 @@
 			width: auto
 			font-size: 6vw
 
-			@media (min-width: #{helpers.mediaQuery('tablet')})
+			@media (min-width: #{helpers.mediaQuery('laptop')})
 				font-size: 3.5vw
 
 		.stats
@@ -65,7 +65,7 @@
 			transform: translateX(-2rem)
 			line-height: 0
 
-		@media (min-width: #{helpers.mediaQuery('phone')})
+		@media (min-width: #{helpers.mediaQuery('tablet')})
 			grid-template-columns: repeat(2, 1fr)
 			padding:
 				top: 10rem
@@ -74,7 +74,9 @@
 				left: unset
 
 			figure
-				grid-column: 1 / -1
+				grid-row: 1 / 5
+				width: auto
+				transform: none
 
 		@media (min-width: #{helpers.mediaQuery('laptop')})
 			grid-template-columns: 3fr 5fr 4fr
@@ -82,8 +84,6 @@
 			figure
 				grid-row: 1 / span 2
 				grid-column: unset
-				width: auto
-				transform: none
 
 		.title
 			margin-bottom: 0.75rem
