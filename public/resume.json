@@ -1,0 +1,210 @@
+{
+  "basics": {
+    "name": "Jörgen Krieger",
+    "label": "Digital Designer at ROX",
+    "image": "",
+    "email": "jorgen@labelnoir.me",
+    "phone": "",
+    "url": "http://labelnoir.me",
+    "summary": "As a designer, I believe a good project includes more than a great user experience. My focus is on merging UX, tech and business goals to create optimal results. For the user, the client, and the business.",
+    "location": {
+      "countryCode": "NL",
+      "address": "Netherlands"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "jorgenkrieger",
+        "url": "https://www.linkedin.com/in/jorgenkrieger/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "ROX | digital agency",
+      "position": "Digital Designer",
+      "startDate": "2018-04-30",
+      "endDate": "",
+      "highlights": [],
+      "summary": null,
+      "url": "https://www.linkedin.com/company/1956482",
+      "location": "Rotterdam"
+    },
+    {
+      "name": "Keplar Agency",
+      "position": "UX Designer",
+      "startDate": "2014-09-30",
+      "endDate": "2017-12-31",
+      "highlights": [],
+      "summary": "I started off as a graduate intern working on a User Experience research about work efficiency in CMS/CRM systems.\n\nAfter graduating I continued working for Keplar Agency as UX designer where I concern myself about research & concepting, defining requirements, flow design, interaction design & quality control.  Besides my UX design tasks I functioned as product owner for specific projects.",
+      "url": "https://www.linkedin.com/company/2696133",
+      "location": "Amsterdam Area, Netherlands"
+    },
+    {
+      "name": "Elastik. Concepts",
+      "position": "Front-end Developer",
+      "startDate": "2011-09-30",
+      "endDate": "2014-08-31",
+      "highlights": [],
+      "summary": "As front-end developer I was responsible for the development of small scale websites like one-pagers, wordpress templates, facebook tabs and mail templates. Occasionally I was appointed as technical advisor.\n\nBetween Sept '12 and Jan '13 I did my intership here for my education Communication & Media Design.",
+      "url": "https://www.linkedin.com/company/745989",
+      "location": "The Hague Area, Netherlands"
+    },
+    {
+      "name": "Binx Web & Ontwerp",
+      "position": "Webdesign Intern",
+      "startDate": "2009-01-31",
+      "endDate": "2009-07-31",
+      "highlights": [],
+      "summary": "Intern interface design & front-end development",
+      "url": "",
+      "location": "Enschede Area, Netherlands"
+    },
+    {
+      "name": "Spider Spider Digital Media - allround multimediale communicatie & webdevelopment",
+      "position": "Webdesign Intern",
+      "startDate": "2007-08-31",
+      "endDate": "2008-01-31",
+      "highlights": [],
+      "summary": "Webdesigner",
+      "url": "https://www.linkedin.com/company/628030",
+      "location": "Enschede Area, Netherlands"
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Rotterdam University of Applied Sciences",
+      "area": "Communication and Media Design",
+      "studyType": "Bachelor’s Degree",
+      "startDate": "2010-12-31",
+      "endDate": "2015-12-31",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "ROC van Twente",
+      "area": "Multimedia Design",
+      "studyType": "MBO",
+      "startDate": "2005-12-31",
+      "endDate": "2009-12-31",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "UX Design",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Interaction Design",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "User Interface Design",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Concept Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Keplar Agency",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Graphic Design",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Product Engineering",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "User Experience Design",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Psychic",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "WordPress",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "HTML",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "HTML5",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Video Editing",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Cascading Style Sheets (CSS)",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Front-end Development",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Project Management",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Design Thinking",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "fluency": "Native Speaker",
+      "language": "Dutch"
+    },
+    {
+      "fluency": "Full Professional",
+      "language": "English"
+    },
+    {
+      "fluency": "Elementary",
+      "language": "Japanese"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "NOS | Jeugdjournaal",
+      "startDate": "2013-08-31",
+      "summary": "For the dutch broadcasting service NOS we had to develop a cross-platform strategy to make sure kids would stick to the NOS news after outgrowing their news for kids \"Jeugdjournaal\".\n\nBased on research, we came up with a tablet app providing more in-depth information through interactive storytelling. This allowed us to connect to the young viewers on a more emotional level.",
+      "url": "http://makingof.paperfish.nl/",
+      "endDate": "2014-01-31"
+    }
+  ],
+}
