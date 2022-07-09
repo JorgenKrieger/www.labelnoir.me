@@ -6,7 +6,7 @@ const ContentSecurityPolicy = `
     script-src 'unsafe-eval';
     img-src 'self' blob: data: www.datocms-assets.com images.unsplash.com;
     object-src 'none';
-    style-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline' fonts.bunny.net;
     font-src 'self' fonts.bunny.net data:;
 `;
 
