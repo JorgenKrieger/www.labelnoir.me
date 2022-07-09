@@ -12,9 +12,10 @@ const GalleryRecord = ({ data }) => {
         <div
             className={cx('container', 'content', 'content-gallery')}
             style={{ '--images': data.images.length > 4 ? 4 : data.images.length }}
+            tabIndex="0"
         >
             {data.images.map((image, index) => (
-                <figure key={index} className={cx('image')}>
+                <figure key={index} className={cx('image')} tabIndex="0">
                     <Image
                         alt={image.alt}
                         height={image.height}

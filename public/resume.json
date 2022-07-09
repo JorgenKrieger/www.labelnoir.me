@@ -35,7 +35,9 @@
       "position": "UX Designer",
       "startDate": "2014-09-30",
       "endDate": "2017-12-31",
-      "highlights": [],
+      "highlights": [
+		"Finished my bachelor thesis"
+	  ],
       "summary": "I started off as a graduate intern working on a User Experience research about work efficiency in CMS/CRM systems.\n\nAfter graduating I continued working for Keplar Agency as UX designer where I concern myself about research & concepting, defining requirements, flow design, interaction design & quality control.  Besides my UX design tasks I functioned as product owner for specific projects.",
       "url": "https://www.linkedin.com/company/2696133",
       "location": "Amsterdam Area, Netherlands"
@@ -196,7 +198,15 @@
       "language": "Japanese"
     }
   ],
-  "interests": [],
+  "interests": [{
+	"name": "Asia",
+	"keywords": [
+		"Japan",
+		"Tokyo",
+		"South Korea",
+		"Seoul"
+	]
+  }],
   "references": [],
   "projects": [
     {

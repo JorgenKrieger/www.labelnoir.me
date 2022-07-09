@@ -9,7 +9,7 @@ let cx = classNames.bind(styles);
 // Component
 const ImageRecord = ({ data }) => {
     return (
-        <figure className={cx('container', 'content', 'content-image')}>
+        <figure className={cx('container', 'content', 'content-image')} tabIndex="0">
             <Image
                 alt={data.image.alt}
                 height={data.image.height}

@@ -5,6 +5,12 @@ import { CaseGrid, HomeHero } from '../components/content';
 import { renderMetaTags } from 'react-datocms';
 import { gql } from '@apollo/client';
 import client from '../apollo-client';
+import Split from '../components/helper/SplitText';
+import styles from '../styles/pages/home.module.sass';
+import classNames from 'classnames/bind';
+
+// Prepare styles
+let cx = classNames.bind(styles);
 
 // Components
 const Home = ({ data }) => {
@@ -15,9 +21,13 @@ const Home = ({ data }) => {
             <HomeHero content={data.home.heroContent} image={data.home.heroImage} />
 
             <CaseGrid projects={data.allCases}>
-                <H>{data.home.casesHeading}</H>
+                <H className={cx('heading')}>
+                    <Split>
+                        {data.home.casesHeading}
+                    </Split>
+                </H>
             </CaseGrid>
-        </Section>
+        </Section >
     );
 };
 

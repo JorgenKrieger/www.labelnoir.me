@@ -9,7 +9,7 @@ let cx = classnames.bind(styles);
 // Component
 const Education = ({ data }) => {
     return (
-        <section className={cx('container', 'content-education')}>
+        <section className={cx('container', 'content-education')} tabIndex="0">
             <H>Educational background</H>
 
             {data.map((education) => (

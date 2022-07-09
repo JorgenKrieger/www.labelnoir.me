@@ -4,10 +4,15 @@ import Image from 'next/image';
 import { H, Section } from 'react-headings';
 import classnames from 'classnames/bind';
 import styles from '../styles/pages/about.module.sass';
-import { Persona, WorkExperience, Education } from '../components/content';
 import client from '../apollo-client';
 import { gql } from '@apollo/client';
 import { renderMetaTags, StructuredText } from 'react-datocms';
+
+// Content blocks
+import dynamic from 'next/dynamic';
+const Persona = dynamic(() => import('../components/content').then((mod) => mod.Persona))
+const WorkExperience = dynamic(() => import('../components/content').then((mod) => mod.WorkExperience))
+const Education = dynamic(() => import('../components/content').then((mod) => mod.Education))
 
 // Prepare classes
 let cx = classnames.bind(styles);

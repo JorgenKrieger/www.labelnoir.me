@@ -42,13 +42,13 @@ const Logo = ({ logo }) => {
 // Component
 const WorkExperience = ({ data }) => {
     return (
-        <section className={cx('workExperience')}>
+        <section className={cx('workExperience')} tabIndex="0">
             <H className={cx('h2')}>Work Experience</H>
 
             <Section>
                 <Swiper className={cx('jobs')} spaceBetween={50} slidesPerView={'auto'}>
                     {data.map((job) => (
-                        <SwiperSlide key={job.agency} className={cx('slide')}>
+                        <SwiperSlide key={job.agency} className={cx('slide')} tabIndex="0">
                             <Logo logo={job.logo} />
                             <H className={cx('agency')}>{job.agency}</H>
                             <p className={cx('year')}>

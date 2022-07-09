@@ -5,10 +5,16 @@ import client from '../../apollo-client';
 import { H, Section } from 'react-headings';
 import { renderMetaTags, StructuredText } from 'react-datocms';
 import React from 'react';
-import { TextRecord, ImageRecord, QuoteRecord, GalleryRecord } from '../../components/content';
 
 import classNames from 'classnames/bind';
 import styles from '../../styles/pages/case.module.sass';
+
+// Content imports
+import dynamic from 'next/dynamic';
+const TextRecord = dynamic(() => import('../../components/content').then((mod) => mod.TextRecord))
+const ImageRecord = dynamic(() => import('../../components/content').then((mod) => mod.ImageRecord))
+const QuoteRecord = dynamic(() => import('../../components/content').then((mod) => mod.QuoteRecord))
+const GalleryRecord = dynamic(() => import('../../components/content').then((mod) => mod.GalleryRecord))
 
 // Prepare classes
 let cx = classNames.bind(styles);

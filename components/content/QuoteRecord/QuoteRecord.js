@@ -8,7 +8,7 @@ let cx = classNames.bind(styles);
 // Component
 const QuoteRecord = ({ data }) => {
     return (
-        <blockquote className={cx('container', 'content', 'content-quote')}>
+        <blockquote className={cx('container', 'content', 'content-quote')} tabIndex="0">
             {data.blockquote}
         </blockquote>
     );

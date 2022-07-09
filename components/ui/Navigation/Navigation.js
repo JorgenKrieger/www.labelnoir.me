@@ -64,7 +64,9 @@ const Navigation = () => {
                 <CSSTransition in={isOpen} timeout={300} classNames={cx('fade')} unmountOnExit>
                     <nav className={cx('navigation')}>
                         <Link href="/">
-                            <a>Home</a>
+                            <a>
+                                Home
+                            </a>
                         </Link>
 
                         <Link href="/about">

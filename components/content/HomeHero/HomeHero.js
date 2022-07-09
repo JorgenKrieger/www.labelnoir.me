@@ -25,12 +25,12 @@ const HomeHero = ({ content, image }) => {
                 end: window.innerHeight,
                 scrub: true,
             },
-            y: window.innerHeight / 2,
+            yPercent: 75
         });
     }, []);
 
     return (
-        <div className={cx('container', 'hero')}>
+        <div className={cx('container', 'hero')} tabIndex="0">
             <div className={cx('content')}>
                 <StructuredText data={content} />
             </div>

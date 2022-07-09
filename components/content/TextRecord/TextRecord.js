@@ -14,6 +14,7 @@ const TextRecord = ({ data }) => {
             className={cx('container', 'content', 'content-text', {
                 'align-right': data.textAlignRight,
             })}
+            tabIndex="0"
         >
             <div>
                 {data.title && <H className="h3">{data.title}</H>}

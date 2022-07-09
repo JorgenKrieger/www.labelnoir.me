@@ -56,7 +56,7 @@ const Persona = ({
     const age = calculate_age(new Date(1989, 7, 26));
 
     return (
-        <div className={cx('container', 'persona')}>
+        <div className={cx('container', 'persona')} tabIndex="0">
             <div className={cx('persona_heading')}>
                 <H className={cx('heading')}>J&ouml;rgen Krieger</H>
                 <dl className={cx('stats')}>
