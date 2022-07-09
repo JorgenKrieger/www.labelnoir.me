@@ -10,8 +10,8 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import styles from './HomeHero.module.sass';
 
 // Prepare classes
-let cx = classNames.bind(styles);
 gsap.registerPlugin(ScrollTrigger);
+let cx = classNames.bind(styles);
 
 // Components
 const HomeHero = ({ content, image }) => {
