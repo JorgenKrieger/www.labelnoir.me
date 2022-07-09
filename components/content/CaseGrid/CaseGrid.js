@@ -2,15 +2,14 @@
 import classNames from 'classnames/bind';
 import styles from './CaseGrid.module.sass';
 import { CaseTile } from '..';
-import { forwardRef } from 'react';
 
 // Prepare classes
 let cx = classNames.bind(styles);
 
 // Component
-const CaseGrid = forwardRef(({ projects, children, hidden }, ref) => {
+const CaseGrid = ({ projects, children, hidden }) => {
     return (
-        <div ref={ref} className={cx('container', 'cases', { hidden: hidden })}>
+        <div className={cx('container', 'cases', { hidden: hidden })}>
             {children}
             <div className={cx('grid')}>
                 {projects.map((project) => (
@@ -19,7 +18,7 @@ const CaseGrid = forwardRef(({ projects, children, hidden }, ref) => {
             </div>
         </div>
     );
-});
+};
 
 // Export
 export default CaseGrid;

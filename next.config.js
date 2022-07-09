@@ -6,8 +6,8 @@ const ContentSecurityPolicy = `
     script-src 'unsafe-eval';
     img-src 'self' blob: data: www.datocms-assets.com images.unsplash.com;
     object-src 'none';
-    style-src 'self' fonts.googleapis.com 'unsafe-inline';
-    font-src 'self' fonts.gstatic.com data:;
+    style-src 'self' 'unsafe-inline';
+    font-src 'self' fonts.bunny.net data:;
 `;
 
 const securityHeaders = [
@@ -38,4 +38,8 @@ const nextConfig = {
     },
 };
 
-module.exports = nextConfig;
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+    enabled: process.env.ANALYZE === 'true'
+})
+
+module.exports = withBundleAnalyzer(nextConfig);

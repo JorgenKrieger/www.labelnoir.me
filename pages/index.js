@@ -1,13 +1,16 @@
 // Libraries
 import Head from 'next/head';
 import { H, Section } from 'react-headings';
-import { CaseGrid, HomeHero } from '../components/content';
+import { HomeHero } from '../components/content';
 import { renderMetaTags } from 'react-datocms';
 import { gql } from '@apollo/client';
 import client from '../apollo-client';
 import Split from '../components/helper/SplitText';
 import styles from '../styles/pages/home.module.sass';
 import classNames from 'classnames/bind';
+import dynamic from 'next/dynamic';
+
+const CaseGrid = dynamic(import('../components/content').then((mod) => mod.CaseGrid))
 
 // Prepare styles
 let cx = classNames.bind(styles);
