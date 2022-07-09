@@ -12,9 +12,9 @@ const ImageRecord = ({ data }) => {
         <figure className={cx('container', 'content', 'content-image')} tabIndex="0">
             <Image
                 alt={data.image.alt}
-                height={data.image.height}
-                width={data.image.width}
-                src={data.image.url}
+                height={data.image.responsiveImage.height}
+                width={data.image.responsiveImage.width}
+                src={data.image.responsiveImage.src}
                 placeholder="blur"
                 blurDataURL={data.image.blurUpThumb}
                 objectFit={data.imageSize}

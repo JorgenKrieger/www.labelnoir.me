@@ -5,7 +5,6 @@ import { HomeHero } from '../components/content';
 import { renderMetaTags } from 'react-datocms';
 import { gql } from '@apollo/client';
 import client from '../apollo-client';
-import Split from '../components/helper/SplitText';
 import styles from '../styles/pages/home.module.sass';
 import classNames from 'classnames/bind';
 import dynamic from 'next/dynamic';
@@ -25,9 +24,7 @@ const Home = ({ data }) => {
 
             <CaseGrid projects={data.allCases}>
                 <H className={cx('heading')}>
-                    <Split>
-                        {data.home.casesHeading}
-                    </Split>
+                    {data.home.casesHeading}
                 </H>
             </CaseGrid>
         </Section >
@@ -57,10 +54,12 @@ export async function getStaticProps(context) {
                         value
                     }
                     heroImage {
-                        url
+                        responsiveImage(imgixParams: {fm: webp, fit: crop, maxW: "1080", maxH: "1080"}) {
+                            src
+                            height
+                            width
+                        }
                         alt
-                        height
-                        width
                         blurUpThumb
                     }
                     casesHeading
@@ -73,14 +72,20 @@ export async function getStaticProps(context) {
                         value
                     }
                     thumbnail {
-                        url
+                        responsiveImage(imgixParams: {fm: webp, fit: crop, maxW: "1080", maxH: "1080"}) {
+                            src
+                            height
+                            width
+                        }
                         alt
-                        height
-                        width
                         blurUpThumb
                     }
                     logo {
-                        url
+                        responsiveImage(imgixParams: {fm: webp}) {
+                            src
+                            height
+                            width
+                        }
                         alt
                         height
                         width

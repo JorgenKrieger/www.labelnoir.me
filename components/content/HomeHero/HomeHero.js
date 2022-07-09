@@ -41,13 +41,14 @@ const HomeHero = ({ content, image }) => {
 
             <figure>
                 <Image
-                    src={image.url}
+                    src={image.responsiveImage.src}
                     alt={image.alt}
-                    width={image.width}
-                    height={image.height}
+                    width={image.responsiveImage.width}
+                    height={image.responsiveImage.height}
                     placeholder="blur"
                     blurDataURL={image.blurUpThumb}
                     layout="responsive"
+                    objectFit="cover"
                 />
                 <figcaption>{image.title}</figcaption>
             </figure>

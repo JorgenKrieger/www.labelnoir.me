@@ -25,7 +25,7 @@ const About = ({ aboutData, favicon }) => {
         <>
             <Head>{renderMetaTags([...data.seo, ...favicon])}</Head>
 
-            <header className={cx('container', 'hero')}>
+            <header className={cx('container', 'hero')} tabIndex="0">
                 <H className={cx('heading')}>
                     <span className={cx('align-left')}>J&ouml;rgen</span>
                     <span className={cx('align-right')}>Krieger</span>
@@ -33,7 +33,7 @@ const About = ({ aboutData, favicon }) => {
             </header>
 
             <Section>
-                <div className={cx('container', 'profile')}>
+                <div className={cx('container', 'profile')} tabIndex="0">
                     {data.profilePhoto && (
                         <figure>
                             <Image

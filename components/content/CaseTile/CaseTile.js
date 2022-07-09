@@ -40,20 +40,20 @@ const CaseTile = ({ client, excerpt, slug, year, thumbnail, logo }) => {
                 <Link href={`/cases/${slug}`}>
                     <a className={styles.image}>
                         <Image
-                            src={thumbnail.url}
+                            src={thumbnail.responsiveImage.src}
                             alt={thumbnail.alt}
-                            width={thumbnail.width}
-                            height={thumbnail.width}
+                            width={thumbnail.responsiveImage.width}
+                            height={thumbnail.responsiveImage.width}
                             placeholder="blur"
                             blurDataURL={thumbnail.blurUpThumb}
                             objectFit="cover"
                         />
                         <div className={styles.logo}>
                             <Image
-                                src={logo.url}
+                                src={logo.responsiveImage.src}
                                 alt={logo.alt}
-                                width={thumbnail.width}
-                                height={thumbnail.height}
+                                width={thumbnail.responsiveImage.width}
+                                height={thumbnail.responsiveImage.height}
                                 objectFit="scale-down"
                             />
                         </div>

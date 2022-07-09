@@ -45,7 +45,7 @@ const Case = ({ caseData, favicon }) => {
 
             <header
                 className={cx('container', 'hero')}
-                style={{ '--backgroundImage': `url(${data.thumbnail.url})` }}
+                style={{ '--backgroundImage': `url(${data.thumbnail.responsiveImage.src})` }}
             >
                 <H className={cx('heading')}>
                     <span className={cx('align-left')}>{data.titleLeftAligned}</span>
@@ -174,15 +174,19 @@ export async function getStaticProps(context) {
                     titleLeftAligned
                     titleRightAligned
                     thumbnail {
-                        url
+                        responsiveImage(imgixParams: {fm: webp, fit: crop, maxH: "1080", maxW: "1920"}) {
+                            src
+                        }
                     }
                     content {
                         ... on ImageRecord {
                             id
                             image {
-                                width
-                                url
-                                height
+                                responsiveImage(imgixParams: {fm: webp, fit: crop, maxH: "1080", maxW: "1920"}) {
+                                    src
+                                    width
+                                    height
+                                }
                                 blurUpThumb
                                 alt
                                 title
@@ -204,12 +208,14 @@ export async function getStaticProps(context) {
                         ... on GalleryRecord {
                             id
                             images {
+                                responsiveImage(imgixParams: {fm: webp, fit: crop, maxW: "1080", maxH: "1080"}) {
+                                    src
+                                    width
+                                    height
+                                }
                                 alt
                                 title
-                                url
-                                width
                                 blurUpThumb
-                                height
                             }
                         }
                     }

@@ -18,9 +18,9 @@ const GalleryRecord = ({ data }) => {
                 <figure key={index} className={cx('image')} tabIndex="0">
                     <Image
                         alt={image.alt}
-                        height={image.height}
-                        width={image.width}
-                        src={image.url}
+                        height={image.responsiveImage.height}
+                        width={image.responsiveImage.width}
+                        src={image.responsiveImage.src}
                         placeholder="blur"
                         blurDataURL={image.blurUpThumb}
                         objectFit="cover"
