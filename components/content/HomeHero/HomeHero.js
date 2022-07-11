@@ -4,23 +4,26 @@ import Image from 'next/image';
 import classNames from 'classnames/bind';
 import { StructuredText } from 'react-datocms';
 
-import { gsap } from 'gsap/dist/gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import styles from './HomeHero.module.sass';
 
-// Prepare classes
+// Register plugin
 gsap.registerPlugin(ScrollTrigger);
+
+// Prepare classes
 let cx = classNames.bind(styles);
 
 // Components
 const HomeHero = ({ content, image }) => {
     const background = useRef();
+    const hero = useRef();
 
     useEffect(() => {
         gsap.to(background.current, {
             scrollTrigger: {
-                trigger: 'body',
+                trigger: hero.current,
                 start: 'top 0%',
                 end: window.innerHeight,
                 scrub: true,
@@ -30,7 +33,7 @@ const HomeHero = ({ content, image }) => {
     }, []);
 
     return (
-        <div className={cx('container', 'hero')} tabIndex="0">
+        <div ref={hero} className={cx('container', 'hero')} tabIndex="0">
             <div className={cx('content')}>
                 <StructuredText data={content} />
             </div>
